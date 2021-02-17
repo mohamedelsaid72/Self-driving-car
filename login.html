@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<!-- bootstrap 4 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+
+<!-- font awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+<!-- stye css  -->
+<link rel="stylesheet" href="./style/style.css">
+<title>Login</title>
+</head>
+<body class="login">
+    <div id="container" class="container">
+            <div class="card"></div>
+            <div class="card">
+                <h2 class="title">LOGIN</h2>
+                <div class="form-group">
+                    <input id="my-input" class="form-control" type="text" placeholder="username">
+                    <input id="my-input" class="form-control" type="password" placeholder="password">
+                </div>
+                <a class="GO" href="./index.html">GO</a>
+                <a class="password" href="#">Forget Password ?</a>
+            </div>
+            <div class="card alt">
+                <div id="rigister" class="toggle"><i id="fas" class="fas fa-pencil-alt"></i></div>
+                <h2 class="title">
+                    RIGISTER
+                </h2>
+                <div class="form-group">
+                    <input id="my-input" class="form-control" type="text" placeholder="username">
+                    <input id="my-input" class="form-control" type="email" placeholder="email">
+                    <input id="my-input" class="form-control" type="password" placeholder="password">
+                    <input id="my-input" class="form-control" type="password" placeholder="repeat password">
+                </div>
+                <a class="GO" href="./index.html">GO</a>
+            </div>
+    </div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+
+<script>
+    var container = document.getElementById('container'),
+        rigister = document.getElementById('rigister'),
+        fas = document.getElementById('fas');
+
+    rigister.addEventListener('click', function () {
+    
+        container.classList.toggle('active');
+        fas.classList.toggle('fa-times');
+
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+// varibles
+$header-color: #425C5A 
+$header-text-color: #FFCEA2 
+$paragraph-color: #A2BFBD
+$paragraph-font: 'Josefin Sans', sans-serif
+
+
+
+
+// mixins
+@mixin btn($padding, $color, $bgc, $fos, $margin, $width)
+    padding: $padding
+    color: $color
+    background-color: $bgc
+    font-size: $fos
+    margin: $margin
+    width: $width
+    
+
+
+
+
+
+// style
+*
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+    scroll-behavior: smooth
+
+body
+    .navbar
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        z-index: 2
+        background-color: transparent !important
+        padding: 20px 0px
+
+        .navbar-brand
+            font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif
+            color: $header-text-color
+            font-size: 1.5em
+            position: relative
+            &:hover
+                color: $header-text-color
+            &::after
+                content: ''
+                width: 5px
+                height: 5px
+                border-radius: 50%
+                position: absolute
+                bottom: 9px
+                margin-left: 5px
+                background-color: #a1bebc
+            &:focus
+                color: $header-text-color
+
+        .m-auto
+            .nav-item
+                padding: 12px 24px 12px 0px
+                .nav-link
+                    color: #fff!important
+                .active
+                    color: $header-text-color !important
+                    
+        .ml-auto
+            .nav-item
+                padding: 12px 24px 12px 0px
+                .nav-link
+                    color: #fff !important
+
+        .navbar-toggler
+            border: 0
+            padding: 0
+            &:focus
+                outline: 0 !important
+                box-shadow: none !important
+            #menu
+                color: $header-text-color
+                font-weight: 400
+                font-size: 25px
+
+    header
+        position: relative
+        width: 100%
+        height: 100vh
+        background-image: url(../images/headerBackground.png)
+        background-size: cover
+        background-position: left
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        .container
+            height: 100%
+            .row
+                height: 100%
+                .col-lg-5,
+                .col-lg-7
+                    display: flex
+                    flex-direction: column
+                    justify-content: center
+
+                .col-lg-5
+                    h1,h2
+                        color: $header-text-color
+                    p
+                        color: $paragraph-color
+                        font-size: 15px
+                        margin-bottom: 30px
+                    .btn
+                        @include btn($padding: 10px 20px, $color: #fff, $bgc: $header-text-color, $fos: 16px, $margin: 10px 0px, $width: 140px)
+                        &:focus
+                            box-shadow: none
+
+                .col-lg-7
+                    img
+                        transform: scaleX(-1)
+                        filter: drop-shadow(0px 5px rgba(0, 0, 0, 0.2))
+
+    @media screen and ( max-width: 991px )
+        header
+            background-image: none
+            background-color: $header-color !important
+        .header-contain
+            margin: 0 0
+            width: 100% !important
+            
+        .navbar
+            .navbar-collapse
+                margin: 4px 0px 0px 0px
+                .nav-item
+                    border-bottom: 1px solid $header-color
+                    background-color: #fff
+                    .nav-link
+                        color: $header-color !important
+                        padding: 0px 20px
+                    .active
+                        color: $header-text-color !important
+                        font-weight: 500
+                .animate1
+                    animation-duration: 0.6s
+                    animation-delay: 0.2s
+                .animate2
+                    animation-duration: 0.6s
+                    animation-delay: 0.3s
+                .animate3
+                    animation-duration: 0.6s
+                    animation-delay: 0.4s
+                .animate4
+                    animation-duration: 0.6s
+                    animation-delay: 0.5s
+
+
+                        
+
+                    
+                        
+
+
+

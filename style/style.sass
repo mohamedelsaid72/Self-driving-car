@@ -1,0 +1,720 @@
+// varibles
+$header-color: #1a1c1d 
+$header-text-color: #05c77e 
+$paragraph-color: #fff
+$paragraph-font: 'Josefin Sans', sans-serif
+
+
+
+
+// mixins
+@mixin btn($padding, $color, $bgc, $fos, $margin, $width)
+    padding: $padding
+    color: $color
+    background-color: $bgc
+    font-size: $fos
+    margin: $margin
+    width: $width
+    
+
+
+// style
+#preloader
+    position: fixed
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    background-color: #252525
+    z-index: 1000
+    #status
+        width: 100%
+        height: 100%
+        position: absolute
+        left: 0
+        top: 0
+        background-image: url(../images/loader_Gif/green-loader.gif)
+        background-repeat: no-repeat
+        background-size: 35vh
+        background-position: center center
+        transform: scaleX(-1)
+
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    scroll-behavior: smooth
+
+body
+    // fixed style for all sections
+    section
+        width: 100%
+        overflow-x: hidden
+    .row
+        margin: 0
+        padding: 5% 0%
+        .col-md-6,
+        .col-md-4,
+        .col-md-3,
+        .col-md-12
+            padding: 20px 15px
+            height: auto
+            display: flex
+            justify-content: center
+            align-items: center
+            flex-direction: row
+        .text
+            p
+                max-width: 80%
+                &:nth-child(1)
+                    margin-bottom: 0
+                &:nth-child(3)
+                    margin-bottom: 40px
+            h2
+                margin-bottom: 20px
+                font-weight: bold
+
+    // navbar style
+    .navbar
+        position: fixed
+        top: 0
+        left: 0
+        width: 100%
+        z-index: 2
+        background-color: transparent !important
+        padding: 24px 0px
+        transition: ease-in-out 0.5s !important
+
+        .navbar-brand
+            font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif
+            color: $header-text-color
+            font-size: 1.5em
+            position: relative
+            &:hover
+                color: $header-text-color
+            &::after
+                content: ''
+                width: 5px
+                height: 5px
+                border-radius: 50%
+                position: absolute
+                bottom: 9px
+                margin-left: 5px
+                background-color: $paragraph-color
+            &:focus
+                color: $header-text-color
+
+        .m-auto
+            .nav-item
+                padding: 12px 24px 12px 0px
+                .nav-link
+                    color: #fff!important
+                    &:hover
+                        color: $header-text-color !important
+                .active
+                    color: $header-text-color !important
+                .dropdown-menu
+                    background-color: $header-text-color !important
+                    border: none !important
+                    .dropdown-item
+                        color: #fff
+                        &:hover
+                            background-color: transparent !important
+                            color: $header-color 
+
+                    
+        .ml-auto
+            .nav-item
+                padding: 12px 24px 12px 0px
+                .nav-link
+                    color: #fff !important
+                    &:hover
+                        color: $header-text-color !important
+
+        .navbar-toggler
+            border: 0
+            padding: 0
+            &:focus
+                outline: 0 !important
+                box-shadow: none !important
+            #menu
+                color: $header-text-color
+                font-weight: 400
+                font-size: 25px
+
+    .sticky
+        background-color: $header-color !important
+        padding: 14px 0px
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1)
+
+    // header style
+    header
+        position: relative
+        width: 100%
+        height: 100vh
+        background-color: $header-color
+        background-image: linear-gradient(45deg, rgb(26, 28, 29) 39%, rgba(26, 28, 29, 0) 65%, rgba(26, 28, 29, 0) 68%, rgb(26, 28, 29) 100%), url(../images/background-lines2-1739619e00a3b6bce89c4dc8628ee021.png)
+        background-size: cover
+        background-position: center top, calc(50% + 225px) -9px
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        .container
+            height: 100%
+            .row
+                height: 100%
+                .col-lg-12
+                    display: flex
+                    flex-direction: column
+                    justify-content: center
+
+                .col-lg-12
+                    text-align: center
+                    h1,h2
+                        color: $header-text-color
+                    p
+                        color: $paragraph-color
+                        font-size: 18px
+                        margin: 15px 0px 30px 0px
+                    .btn
+                        @include btn($padding: 10px 20px, $color: #fff, $bgc: $header-text-color, $fos: 16px, $margin: 10px 0px, $width: 140px)
+                        margin: 0 auto
+                        border: 2px solid $header-text-color !important
+                        font-weight: 600
+                        &:focus
+                            box-shadow: none
+                        &:hover
+                            background-color: transparent !important
+                            border: 2px solid $header-text-color !important
+                            color: #fff
+        .up
+            position: fixed
+            right: 0
+            bottom: 0
+            margin: 20px
+            background-color: $header-color
+            border-radius: 50%
+            border: none
+            z-index: 999
+            width: 50px
+            height: 50px
+            font-size: 18px
+            display: none
+            align-items: center
+            justify-content: center
+            a
+                color: #fff
+                text-decoration: none
+        .upShow
+            display: flex
+
+
+    // safety section style
+    .safety
+        .container
+            .row
+                .col-md-6
+                    &:nth-child(1)
+                        img
+                            transform: scaleX(-1)
+                    &:nth-child(2)
+                        .text
+                            .btn
+                                &:nth-child(4)
+                                    @include btn($padding: 8px 20px, $color: #fff, $bgc: $header-color, $fos: 16px, $margin: 5px, $width: 140px)
+                                    border: 2px solid $header-color
+                                    border-radius: 0 !important
+                                    font-weight: 500
+                                    &:focus
+                                        box-shadow: none
+                                    &:hover
+                                        background-color: transparent
+                                        color: $header-color
+                                &:nth-child(5)
+                                    @include btn($padding: 8px 20px, $color: $header-color, $bgc: #fff, $fos: 16px, $margin: 5px, $width: 140px)
+                                    border: 2px solid $header-text-color
+                                    border-radius: 0 !important
+                                    font-weight: 500
+                                    &:focus
+                                        box-shadow: none
+                                    &:hover
+                                        background-color: $header-text-color
+                                        color: #fff
+
+
+    // performance section style
+    .performance
+        background-color: $header-color
+        .container
+            .row
+                .col-md-6
+                    &:nth-child(1)
+                        background-color: $header-color
+                        .text
+                            color: #fff
+                            .btn
+                                &:nth-child(4)
+                                    @include btn($padding: 8px 20px, $color: #fff, $bgc: $header-color, $fos: 16px, $margin: 5px, $width: 140px)
+                                    border: 2px solid $header-text-color
+                                    border-radius: 0 !important
+                                    font-weight: 500
+                                    &:focus
+                                        box-shadow: none
+                                    &:hover
+                                        background-color: $header-text-color
+                                        color: #fff
+                    &:nth-child(2)
+                        overflow: hidden    
+
+    
+    // features section style
+    .features
+        .container
+            .row
+                .col-lg-3
+                    &:nth-child(1)
+                        .text
+                            .btn
+                                display: block
+                                &:nth-child(4)
+                                    @include btn($padding: 8px 20px, $color: #fff, $bgc: $header-color, $fos: 16px, $margin: 20px 0px, $width: 140px)
+                                    border: 2px solid $header-color
+                                    border-radius: 0 !important
+                                    font-weight: 500
+                                    &:focus
+                                        box-shadow: none
+                                    &:hover
+                                        background-color: transparent
+                                        color: $header-color
+                                &:nth-child(5)
+                                    @include btn($padding: 8px 20px, $color: $header-color, $bgc: #fff, $fos: 16px, $margin: 20px 0px, $width: 140px)
+                                    border: 2px solid $header-text-color
+                                    border-radius: 0 !important
+                                    font-weight: 500
+                                    &:focus
+                                        box-shadow: none
+                                    &:hover
+                                        background-color: $header-text-color
+                                        color: #fff
+                .col-lg-6
+                    position: relative
+                    overflow: hidden
+                    height: 50vh
+                    margin: auto
+                    &::after
+                        content: ''
+                        width: 80%
+                        height: 100%
+                        background: linear-gradient(to left, rgba(5, 199, 126, 0.23),rgba(5, 199, 126, 0.001))
+                        border-radius: 50%
+                        position: absolute
+                        right: 0px
+                        z-index: 0
+                    &::before
+                        content: ''
+                        width: 80%
+                        height: 100%
+                        background: linear-gradient(to right, rgba(5, 199, 126, 0.23),rgba(5, 199, 126, 0.001))
+                        border-radius: 50%
+                        position: absolute
+                        left: 0px
+                        z-index: 0
+                    img
+                        width: 30%
+                        z-index: 2
+                    #star-five
+                        position: absolute
+                        z-index: 1
+                        width: 155%
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        opacity: 0.45
+                        -webkit-filter: invert(100%)  //Safari/Chrome 
+                        filter: invert(100%)
+                        transform: rotate(90deg)
+                .col-lg-3
+                    &:nth-child(3)
+                        .text
+                            .border-bottom
+                                border-color: rgba(26, 28, 29, 0.5) !important
+
+
+    // features section style              
+    .range
+        position: relative
+        width: 100%
+        height: 80vh
+        background-image: linear-gradient(rgba(255, 255, 255, 0.5) 74%, rgb(238, 236, 237) 26%),url(../images/wall.jpg)
+        background-size: cover
+        background-position: center center
+        z-index: 0
+        overflow: hidden
+        .container
+            .row
+                .contain-text
+                    justify-content: start
+                    .text
+                        p
+                            max-width: 100%
+                            &:nth-child(1)
+                                font-weight: 500
+                            &:nth-child(3)
+                                color: #5a5a5a
+                                
+                .img-position
+                    position: absolute
+                    left: 0
+                    right: 0
+                    bottom: -12%
+                    width: 100%
+                    height: 75vh
+                    background-image: url(../images/usc60mbcar1a021003.webp)
+                    background-size: contain
+                    background-position: center
+                    background-repeat: no-repeat
+
+
+    //range-features section style
+    .range-features
+        background-color: rgb(238, 236, 237)
+        padding-bottom: 4%
+        .container
+            max-width: 992px
+            .row
+                background-color: #fff
+                padding: 3% 0%
+                .col-md-4
+                    padding: 20px 10px
+                    .text
+                        width: 80%
+                        p
+                            max-width: 100%
+                            margin-bottom: 0
+    
+
+    //model-features section style
+    .model-features
+        background-color: $header-color
+        .container
+            .row
+                h2
+                    color: #fff
+                    margin: 40px 0
+                .col-md-6
+                    display: block
+                    .text
+                        width: 100%
+                        h5
+                            text-align: center
+                            background-color: #3a3a3a
+                            color: $header-text-color
+                            padding: 18px
+                            border-radius: 4px
+                            margin-bottom: 0
+                        p
+                            margin-bottom: 0
+                            max-width: 100%
+                            display: grid
+                            grid-template-columns: 1fr 1fr
+                            padding: 16px 40px
+                            border-bottom: 1px solid #5a5a5a
+                            &:last-child
+                                border-bottom: none
+
+                            span
+                                &:nth-child(1)
+                                    color: #fff
+                                    font-weight: 500
+                                &:nth-child(2)
+                                    color: #5a5a5a
+                                    text-align: right
+                                    font-weight: 600
+                    &:nth-child(3)
+                        h5
+                            background-color: transparent
+                            border: 1px solid #5a5a5a
+                            color: #fff
+                                                    
+
+    // responsive design style
+    @media screen and ( max-width: 991px )
+        .header-contain
+            margin: 0 0
+            width: 100% !important
+            
+        .navbar
+            .navbar-collapse
+                margin: 4px 0px 0px 0px
+                .nav-item
+                    border-bottom: 1px solid $header-color
+                    background-color: $header-text-color
+                    .nav-link
+                        color: $paragraph-color !important
+                        padding: 0px 20px
+                        text-align: center 
+                        &:hover
+                            color: $header-color !important
+                    .active
+                        color: $header-color !important
+                        font-weight: 500
+                .animate1
+                    animation-duration: 0.6s
+                    animation-delay: 0.2s
+                .animate2
+                    animation-duration: 0.6s
+                    animation-delay: 0.3s
+                .animate3
+                    animation-duration: 0.6s
+                    animation-delay: 0.4s
+                .animate4
+                    animation-duration: 0.6s
+                    animation-delay: 0.5s
+
+    @media screen and ( max-width: 768px )
+        .navbar
+            padding: 10px 0px
+            .navbar-brand
+                font-size: 20px
+            .fas
+                font-size: 20px !important
+            
+
+        .text
+            p
+                max-width: 98% !important
+
+        .model-features
+            .container
+                .row
+                    .col-md-6
+                        .text
+                            p
+                                padding: 16px 10px
+                                span
+                                    font-size: 15px
+    
+
+// login page style
+.login
+    background-color: #ececec
+    height: 100vh
+    display: flex
+    align-items: center
+    justify-content: center
+    .container
+        position: relative
+        max-width: 460px
+        width: 100%
+        margin: 0 auto
+        .card
+            transition: 0.5s ease-in
+            background-color: $header-color
+            &:first-child
+                background-color: $header-color
+                height: 10px
+                border-radius: 5px 5px 0 0
+                margin: 0 10px
+                padding: 0
+            
+            padding: 60px 0px
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.16), 0 1px 2px rgba(0, 0, 0, 0.23)
+            .title
+                position: relative
+                border-left: 4px solid $header-text-color
+                padding-left: 30px
+                color: $header-text-color
+                font-size: 32px
+            .form-group
+                position: relative
+                padding: 30px 30px 0px 30px
+                .form-control
+                    position: relative
+                    border: 0 
+                    border-bottom: 2px solid #fff
+                    background-color: $header-color
+                    border-radius: 0
+                    font-size: 22px
+                    font-weight: lighter
+                    caret-color: $header-text-color
+                    transition: 0.5s ease
+                    margin-bottom: 50px
+                    color: #fff
+                    &::placeholder
+                        transition: 0.5s
+                        color: #fff
+                    &:focus
+                        box-shadow: none
+                        border-bottom: 2px solid $header-text-color
+                        &::placeholder
+                            font-size: 18px
+                            color: $header-text-color
+            .GO
+                text-decoration: none
+                padding: 16px 20px
+                color: #fff
+                border: 2px solid $header-text-color !important
+                background-color: $header-text-color
+                width: 60%
+                margin: auto
+                text-align: center
+                border-radius: 4px
+                &:hover
+                    background-color: transparent !important
+                    border: 2px solid $header-text-color !important
+                    color: $header-text-color !important
+            .password
+                text-align: center
+                color: $header-text-color
+                margin: 20px 0px 0px 0px
+        .card.alt
+            position: absolute
+            top: 40px
+            right: -40px
+            z-index: 10
+            width: 100px
+            height: 100px
+            background: $header-text-color
+            border-radius: 100%
+            box-shadow: none
+            padding: 0
+            transition: 0.3s ease
+            overflow: hidden
+            .toggle
+                position: relative
+                background: $header-text-color
+                width: 100px
+                height: 100px
+                border-radius: 100%
+                color: #ffffff
+                font-size: 30px
+                line-height: 100px
+                text-align: center
+                cursor: pointer
+
+    .container.active
+        .card.alt 
+            top: 20px
+            right: 0
+            width: 100%
+            min-width: 100%
+            height: auto
+            border-radius: 5px
+            padding: 60px 0 40px
+            .title
+                color: #fff
+                border-color: #fff
+            .toggle
+                position: absolute
+                border-radius: 0
+                line-height: 40px
+                width: 50px
+                height: 50px
+                cursor: pointer
+                top: 59px
+                right: 60px
+                display: inline
+                color: #fff
+                z-index: 1000
+            .form-group
+                .form-control
+                    background-color: transparent
+                    border-bottom: 2px solid #fff
+                    margin-bottom: 30px
+                    color: #fff
+                    &::placeholder
+                        color: #fff
+                        font-weight: 400
+                        font-size: 22px
+                    &:focus
+                        &::placeholder
+                            font-size: 18px
+            .GO
+                text-decoration: none
+                padding: 16px 20px
+                color: #fff
+                border: 2px solid #fff !important
+                width: 60%
+                margin: auto
+                text-align: center
+                border-radius: 4px
+                &:hover
+                    background-color: #fff !important
+                    color: $header-text-color !important
+
+    @media screen and ( max-width: 768px )
+        .card.alt
+            top: 470px !important
+            right: 37% !important
+        .container.active
+            .card.alt 
+                top: 0px !important
+                right: 0 !important
+                left: 0 !important
+                width: 100%
+                min-width: 100%
+                height: auto
+                border-radius: 5px
+                padding: 60px 0 40px
+
+
+// contact page style
+.contact
+    position: relative
+    width: 100%
+    height: 100vh
+    background-color: $header-color
+    background-image: linear-gradient(45deg, rgb(26, 28, 29) 39%, rgba(26, 28, 29, 0) 65%, rgba(26, 28, 29, 0) 68%, rgb(26, 28, 29) 100%), url(../images/background-lines2-1739619e00a3b6bce89c4dc8628ee021.png)
+    background-size: cover
+    background-position: center top, calc(50% + 225px) -9px
+    display: flex
+    align-items: center
+    justify-content: center
+    .container
+        position: relative
+        max-width: 700px
+        width: 100%
+        margin: 0 auto
+        .text-center
+            color: $header-text-color
+            font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif
+        form
+            .form-group
+                padding: 12px
+                margin-bottom: 0
+                label
+                    color: $header-text-color
+                .form-control
+                    background-color: transparent !important
+                    border: 2px solid $header-text-color !important
+                    border-radius: 0
+                    color: #fff !important
+                    &:focus
+                        box-shadow: none !important
+                #inputState
+                    option
+                        background-color: $header-color !important
+                        color: #fff
+            .btn  
+                @include btn($padding: 10px 20px, $color: $header-text-color, $bgc: transparent, $fos: 16px, $margin: 10px 0px, $width: 140px)
+                margin: 0 auto
+                border: 2px solid $header-text-color !important
+                font-weight: 600
+                display: flex
+                justify-content: center
+                &:focus
+                    box-shadow: none
+                &:hover
+                    background-color: $header-text-color !important
+                    border: 2px solid $header-text-color !important
+                    color: #fff
+
+                    
+
+                    
+                        
+
+
+
